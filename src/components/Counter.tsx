@@ -7,6 +7,7 @@ import {
   decrement,
   decrementByAmount,
   increment,
+  incrementAsync,
   incrementByAmount,
 } from "@/redux/features/CounterSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
@@ -33,6 +34,10 @@ const Counter = () => {
     dispatch(decrementByAmount(num));
   };
 
+  const handleIncrementAsync = () => {
+    dispatch(incrementAsync(num));
+  };
+
   return (
     <div>
       <Count count={counter} />
@@ -41,6 +46,7 @@ const Counter = () => {
         <Button handler={handleDecrement}>Decrement</Button>
         <Button handler={handleIncrementByAmount}>Increment By Amount</Button>
         <Button handler={handleDecrementByAmount}>Decrement By Amount</Button>
+        <Button handler={handleIncrementAsync}>Increment With Async</Button>
       </div>
     </div>
   );
