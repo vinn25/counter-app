@@ -25,7 +25,7 @@ const CounterSlice = createSlice({
         builder.addCase(
             incrementAsync.fulfilled,
             (state, action: PayloadAction<number>) => {
-                state.value = + action.payload;
+                state.value += action.payload;
             }
         )
     }
